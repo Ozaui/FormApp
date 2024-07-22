@@ -28,3 +28,4 @@ C:\Users\ASUS\Desktop\.NET\FormApp\obj\Debug\net8.0\refint\FormApp.dll
 C:\Users\ASUS\Desktop\.NET\FormApp\obj\Debug\net8.0\FormApp.pdb
 C:\Users\ASUS\Desktop\.NET\FormApp\obj\Debug\net8.0\FormApp.genruntimeconfig.cache
 C:\Users\ASUS\Desktop\.NET\FormApp\obj\Debug\net8.0\ref\FormApp.dll
+C:\Users\ASUS\Desktop\.NET\FormApp\obj\Debug\net8.0\FormApp.sourcelink.json

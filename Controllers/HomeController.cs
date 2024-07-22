@@ -32,10 +32,18 @@ public class HomeController : Controller
     }
     [HttpPost]
     //public IActionResult Create([Bind("Name, Price")] Product model)
-    public IActionResult Create(Product model, IFormFile imageFile)
+    public async Task<IActionResult> Create(Product model, IFormFile imageFile)
     {
+        var extention = Path.GetExtension(imageFile.FileName);
+        var randomFileName = string.Format($"{Guid.NewGuid()}{extention}");
+        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img", randomFileName);
+
         if (ModelState.IsValid)
         {
+            using (var stream = new FileStream(path, FileMode.Create))
+            {
+                await imageFile.CopyToAsync(stream);
+            }
             model.ProductId = Repository.Products.Count + 1;
             Repository.CreateProduct(model);
             return RedirectToAction("Index");
